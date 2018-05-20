@@ -1,0 +1,28 @@
+language: node_js
+node_js:
+- node
+before_script:
+- npm i -g --silent npm@latest
+- npm i -g --silent @angular/cli
+script:
+- ng test
+- ng build --prod
+before_deploy:
+  # Create a git tag of the new version to use
+  # If package.json major and minor versions match last tag, then increment last tag. Else use package.json major.minor.0.
+- "{ sed -nE 's/^[ \\t]*\"version\": \"([0-9]{1,}\\.[0-9]{1,}\\.)[0-9x]{1,}\",$/\\1/p' package.json; git describe --abbrev=0 | sed -E 's/^v([0-9]{1,}\\.[0-9]{1,}\\.)([0-9]{1,})$/\\1 \\2/g'; } | tr \"\\n\" \" \" | awk '{printf($1==$2?\"v\"$2$3+1:\"v\"$1\"0\")}' | xargs -I {} git tag -a {} -m \"{}\"\n"
+  # Update package.json based on the git tag we just created
+- npm --no-git-tag-version version from-git
+deploy:
+    provider: releases
+    api_key:
+        secure: kVvRYcJ5byKTntSvZA7MYnCiNSlv3+l2WLduyXKUPrPKAdDkbHWAMyFM2QQb0uHrLF2sks0jrF2gg1LpdcUZXTsY4Y1T4i0CWGejqNMdgz7tC8GnGSqrQl1QzwLVqp7wPL/3mNnEVUfP43adoAxQSGbW2utFqvbxD85JdSnikV58x5C286Tv1bEkRmrnrFr5ZlgRwSZvOmq+EzLX6wTm10ELHK8iC6SlrLHxw4ZYWI5eezwf0qqyZB1bwZHD+ZcEOq0D48n/tXSIFxiRyjOkXgrpzsd462oH+MLRpyEA6aVIkiMohjWmR3AsRu8ti232wUCbmCpJi6csKHsdFCuxtIskng+3XID//SSdYa2QLWzj8brNMcmqzOkvR8EkTFKCKapP59RP1IPyNuuSP2MVAWxJS3LuGNWbJ7w0TH7FeR0Gye9mLhsrpuqfUJBLkNLNoZPHBtD9O3so/C2zYz+YAprPQdGf0nIIBtFyHtMiHyBzyIobDy7xx5zzqJQnsyE2lWb6DYqpN+f7YFTugNT+cWNi5Bw6BPZXJhVYniTN9lzKLUmoylNEVigpnHUV5zqaRHPZn11D1eleIQVrUuady218CwB8d7EZlUrGO+dMzwovz1RzyjIyNrv0fFNTDI4Nq52+Ud1KXjFuhF8VUh7W0nq7GBbwQl1iG/bmIhlAY8w=
+    file: /dist
+    skip_cleanup: true
+    on:
+        branch: master
+notifications:
+    email:
+        on_success: never
+        on_failure: change
+

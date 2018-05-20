@@ -1,0 +1,13 @@
+<div class="container">
+    <h1>{{ title }}</h1>
+      <ul class="chronology">
+        <li *ngFor="let event of events" class="chronology">
+            <i *ngIf="!event.icon" class="icon far fa-dot-circle"></i>
+            <i *ngIf="event.icon" class="icon far fa-{{ event.icon }}"></i>
+            <details class="panel">
+                <summary>{{ event.title }}</summary>
+                <p>{{ event.content }}</p>
+            </details>
+        </li>
+      </ul>
+  </div>

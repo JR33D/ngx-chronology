@@ -1,0 +1,22 @@
+# compiled output
+/dist
+/tmp
+/out-tsc
+
+# dependencies
+/node_modules
+
+# dot files
+.editorconfig
+.gitignore
+.npmignore
+.prettierignore
+.prettierrc
+.travis.yml
+/.git
+
+# License
+LICENSE
+
+# Html files
+/**/*.html
