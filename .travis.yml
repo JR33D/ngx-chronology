@@ -2,31 +2,34 @@ language: node_js
 node_js:
  - node
 before_install:
-  - export CHROME_BIN=chromium-browser
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-before_script:
+ - export CHROME_BIN=chromium-browser
+ - export DISPLAY=:99.0
+ - sh -e /etc/init.d/xvfb start
  - npm i -g --silent npm@latest
+before_script:
  - npm i -g --silent @angular/cli
 script:
  - ng test
  - ng build --prod
 before_deploy:
-  # Create a git tag of the new version to use
-  # If package.json major and minor versions match last tag, then increment last tag. Else use package.json major.minor.0.
- - "{ sed -nE 's/^[ \\t]*\"version\": \"([0-9]{1,}\\.[0-9]{1,}\\.)[0-9x]{1,}\",$/\\1/p' package.json; git describe --abbrev=0 | sed -E 's/^v([0-9]{1,}\\.[0-9]{1,}\\.)([0-9]{1,})$/\\1 \\2/g'; } | tr \"\\n\" \" \" | awk '{printf($1==$2?\"v\"$2$3+1:\"v\"$1\"0\")}' | xargs -I {} git tag -a {} -m \"{}\"\n"
-  # Update package.json based on the git tag we just created
- - npm --no-git-tag-version version from-git
+ - npm version from-git
 deploy:
-    provider: releases
-    api_key:
-        secure: kVvRYcJ5byKTntSvZA7MYnCiNSlv3+l2WLduyXKUPrPKAdDkbHWAMyFM2QQb0uHrLF2sks0jrF2gg1LpdcUZXTsY4Y1T4i0CWGejqNMdgz7tC8GnGSqrQl1QzwLVqp7wPL/3mNnEVUfP43adoAxQSGbW2utFqvbxD85JdSnikV58x5C286Tv1bEkRmrnrFr5ZlgRwSZvOmq+EzLX6wTm10ELHK8iC6SlrLHxw4ZYWI5eezwf0qqyZB1bwZHD+ZcEOq0D48n/tXSIFxiRyjOkXgrpzsd462oH+MLRpyEA6aVIkiMohjWmR3AsRu8ti232wUCbmCpJi6csKHsdFCuxtIskng+3XID//SSdYa2QLWzj8brNMcmqzOkvR8EkTFKCKapP59RP1IPyNuuSP2MVAWxJS3LuGNWbJ7w0TH7FeR0Gye9mLhsrpuqfUJBLkNLNoZPHBtD9O3so/C2zYz+YAprPQdGf0nIIBtFyHtMiHyBzyIobDy7xx5zzqJQnsyE2lWb6DYqpN+f7YFTugNT+cWNi5Bw6BPZXJhVYniTN9lzKLUmoylNEVigpnHUV5zqaRHPZn11D1eleIQVrUuady218CwB8d7EZlUrGO+dMzwovz1RzyjIyNrv0fFNTDI4Nq52+Ud1KXjFuhF8VUh7W0nq7GBbwQl1iG/bmIhlAY8w=
-    file: /dist
-    skip_cleanup: true
-    on:
-        branch: master
+    - provider: releases
+        api_key:
+            secure: DxLTZyU3gRFzb73Wn1Ae55FTAe8MM7xFomN/gaH5zqFoIqjWYXHhdCdH7NQcbBUxkTcCWcCpnJXzHgO8RrADWaFhPFNIDRnQH2MYXGSpYlE79TkoqJ5OgDbSWLyRmrXLzdOT4Ez9ovXWvBUhW0tvdvJFKN0AMwliMIeLnPd5D3+3b6xLGSsNr0ffl1SHPmlDymnR2tYTBqy8R6zLYe5embsesDxV2q9NdUt+5PtbgyobSOdUxIkLAVlFEGXhNu2n5Pvqfn8qyug81XOPPRrH1f+vR0oTFw9Kw/lfpRt4LjWbYQ3o5EC1NRwoSImp6bcBHEJz372FQvJXb5OskYIdyzZVgZqr1YXZXCsGjIS2FE3/1wbMBFI6Pu7v+bQ2fOQTMU+ann4M3G7rNd3tBiK+dBIo2MeiKd2R0HPaV+xNF8ohJ7qqQkU+foc1FQYjSmcHclLXw4EWdpG+LZwAvk5EukjeZMytqaIWdHAHRfLWtQtVZZTlVf20Je6HIXZfNRkvgAW9l+RjW9+iKDnwAsb5vwDwH650aczooiJ0u1PcuvEfkDAETd/gnwtOzJ9i6EgJdKt/lSydEE9r1N22UBzY8b2ZSX5p2dGtPQbb0HmpDA+corQ7IUbLfR5E7G3uduUZLmJkcLPJ2ixIVhofGsc+AaEL2Vo8Dzvl0ptnYcaRgPU=
+        file: "/dist"
+        skip_cleanup: true
+        on:
+            branch: master
+    - provider: npm
+        email: jreed129@gmail.com
+        api_key:
+            secure: kVvRYcJ5byKTntSvZA7MYnCiNSlv3+l2WLduyXKUPrPKAdDkbHWAMyFM2QQb0uHrLF2sks0jrF2gg1LpdcUZXTsY4Y1T4i0CWGejqNMdgz7tC8GnGSqrQl1QzwLVqp7wPL/3mNnEVUfP43adoAxQSGbW2utFqvbxD85JdSnikV58x5C286Tv1bEkRmrnrFr5ZlgRwSZvOmq+EzLX6wTm10ELHK8iC6SlrLHxw4ZYWI5eezwf0qqyZB1bwZHD+ZcEOq0D48n/tXSIFxiRyjOkXgrpzsd462oH+MLRpyEA6aVIkiMohjWmR3AsRu8ti232wUCbmCpJi6csKHsdFCuxtIskng+3XID//SSdYa2QLWzj8brNMcmqzOkvR8EkTFKCKapP59RP1IPyNuuSP2MVAWxJS3LuGNWbJ7w0TH7FeR0Gye9mLhsrpuqfUJBLkNLNoZPHBtD9O3so/C2zYz+YAprPQdGf0nIIBtFyHtMiHyBzyIobDy7xx5zzqJQnsyE2lWb6DYqpN+f7YFTugNT+cWNi5Bw6BPZXJhVYniTN9lzKLUmoylNEVigpnHUV5zqaRHPZn11D1eleIQVrUuady218CwB8d7EZlUrGO+dMzwovz1RzyjIyNrv0fFNTDI4Nq52+Ud1KXjFuhF8VUh7W0nq7GBbwQl1iG/bmIhlAY8w=
+        on:
+            tags: true
 notifications:
     email:
         on_success: never
         on_failure: change
+
 
