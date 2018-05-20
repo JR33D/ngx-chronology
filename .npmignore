@@ -3,9 +3,11 @@
 #tests
 test
 coverage
+karma.config.js
 
 #build tools
 .travis.yml
+tsconfig.*.json
 
 #linters
 .prettierrc
@@ -13,3 +15,10 @@ coverage
 #editor settings
 .idea
 .editorconfig
+
+#dir
+/images
+/.github
+
+#misc
+.gitkeep
