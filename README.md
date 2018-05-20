@@ -2,8 +2,8 @@
 
 # Name of the project &middot;
 
-[![Build Status](https://img.shields.io/travis/npm/npm/latest.svg)](https://travis-ci.org/npm/npm)
-[![npm](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/npm)
+[![Build Status](https://img.shields.io/travis/JR33D/ngx-timeline/latest.svg)](https://travis-ci.org/JR33D/ngx-timeline)
+[![npm](https://img.shields.io/npm/v/ngx-chronology.svg)](https://www.npmjs.com/package/ngx-chronology)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 [![GitHub license](https://img.shields.io/badge/License-Unlicense-blue.svg)](https://github.com/your/your-project/blob/master/LICENSE)
 
