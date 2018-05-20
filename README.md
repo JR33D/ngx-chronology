@@ -1,11 +1,11 @@
 ![Logo of the project](./images/logo.sample.png)
 
-# Name of the project &middot;
+# NGX-Chronology
 
-[![Build Status](https://img.shields.io/travis/JR33D/ngx-timeline/latest.svg)](https://travis-ci.org/JR33D/ngx-timeline)
+[![Build](https://img.shields.io/travis/JR33D/ngx-chronology.svg)](https://travis-ci.org/JR33D/ngx-chronology)
 [![npm](https://img.shields.io/npm/v/ngx-chronology.svg)](https://www.npmjs.com/package/ngx-chronology)
+[![License](https://img.shields.io/badge/License-Unlicense-blue.svg)](https://github.com/your/your-project/blob/master/LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
-[![GitHub license](https://img.shields.io/badge/License-Unlicense-blue.svg)](https://github.com/your/your-project/blob/master/LICENSE)
 
 This is a chronology module and components for Angular projects.
 
