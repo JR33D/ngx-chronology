@@ -15,6 +15,13 @@ module.exports = function(config) {
       client: {
          clearContext: false, // leave Jasmine Spec Runner output visible in browser
       },
+      customLaunchers: {
+        // chrome setup for travis CI using chromium
+        Chrome_travis_ci: {
+            base: 'Chrome',
+            flags: ['--no-sandbox']
+        }
+     },
       coverageIstanbulReporter: {
          dir: require('path').join(__dirname, './coverage'),
          reports: ['html', 'lcovonly'],
@@ -25,7 +32,7 @@ module.exports = function(config) {
       colors: true,
       logLevel: config.LOG_INFO,
       autoWatch: true,
-      browsers: ['Chrome'],
-      singleRun: false,
+      browsers: (process.env.TRAVIS) ? ['Chrome_travis_ci'] : ['Chrome'],
+      singleRun: true,
    });
 };
