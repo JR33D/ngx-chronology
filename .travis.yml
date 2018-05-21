@@ -11,7 +11,7 @@ script:
  - ng build
 before_deploy:
  - export PKG_VERSION=`node -p "require('./package.json').version"`
- - git tag "$($PKG_VERSION)-$(date +'%Y%m%d%H%M%S')"
+ - git tag "$(PKG_VERSION)-$(date +'%Y%m%d%H%M%S')"
 deploy:
   - provider: releases
     api_key:
@@ -19,7 +19,6 @@ deploy:
     file: "/dist"
     skip_cleanup: true
     on:
-        tags: true
         branch: master
 notifications:
     email:
