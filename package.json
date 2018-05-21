@@ -9,7 +9,7 @@
       "build:demo": "ng build ngx-chronology-demo",
       "build:prod": "npm run build:lib:prod && npm run build:demo:prod",
       "build:lib:prod": "ng build ngx-chronology --prod",
-      "build:demo:prod": "ng build ngx-chronology-demo --prod",
+      "build:demo:prod": "ng build ngx-chronology-demo --prod --base-href /ngx-chronology/",
       "test": "npm run test:lib && npm run test:demo",
       "test:lib": "ng test ngx-chronology",
       "test:demo": "ng test ngx-chronology-demo",
