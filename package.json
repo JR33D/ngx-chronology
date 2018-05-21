@@ -4,9 +4,9 @@
    "scripts": {
       "ng": "ng",
       "start": "ng serve",
-      "build": "npm run build:lib && npm run build::demo",
-      "build:lib": "ng build ngx-chronology",
-      "build:demo": "ng build ngx-chronology-demo",
+      "build": "npm run build:lib && npm run build:demo",
+      "build:lib": "ng build ngx-chronology --prod",
+      "build:demo": "ng build ngx-chronology-demo --prod",
       "test": "npm run test:lib && npm run test:demo",
       "test:lib": "ng test ngx-chronology",
       "test:demo": "ng test ngx-chronology-demo",

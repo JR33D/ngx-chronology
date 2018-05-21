@@ -8,10 +8,7 @@ before_install:
 before_script:
  - npm i -g --silent @angular/cli
 script:
- - ng test ngx-chronology
- - ng build ngx-chronology --prod
- - ng test ngx-chronology-demo
- - ng build ngx-chronology-demo --prod
+ - ng build
 before_deploy:
  - PKG_VERSION=`node -p "require('./package.json').version"`
  - git tag "$(PKG_VERSION)-$(date +'%Y%m%d%H%M%S')"
