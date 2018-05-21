@@ -4,7 +4,6 @@ import { AppComponent } from './app.component';
 import { NgxChronologyModule } from 'src/lib/chronology.module';
 import { DemoComponent } from './demo/demo.component';
 import { ConfigurationsComponent } from './configurations/configurations.component';
-import { HomeComponent } from './home/home.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { AppRoutingModule } from './app-routing.module';
 describe('AppComponent', () => {
@@ -16,7 +15,6 @@ describe('AppComponent', () => {
             NavigationComponent,
             DemoComponent,
             ConfigurationsComponent,
-            HomeComponent,
          ],
          providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
       }).compileComponents();

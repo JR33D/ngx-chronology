@@ -25,6 +25,13 @@ export class DemoComponent implements OnInit {
          title: 'Event structure (Default Icon)',
          content: `Events are structured into three parts, A title, A icon, and the content that is displayed when expanding the event.`,
       },
+      {
+         title: 'Mobile responsive',
+         icon: 'mobile-alt',
+         faLibrary: 'fas',
+         content: `The component should be mobile ready shrinking the event content areas first.
+            Then moving all events to one side on small screens.`,
+      },
    ];
    constructor() {}
 

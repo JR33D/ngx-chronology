@@ -8,10 +8,10 @@ before_install:
 before_script:
  - npm i -g --silent @angular/cli
 script:
- - npm run build
+ - npm run build:prod
 before_deploy:
  - export PKG_VERSION=`node -p "require('./package.json').version"`
- - git tag "${PKG_VERSION}-$(date +'%Y-%m-%d')"
+ - git tag "${PKG_VERSION}-$(date +'%Y-%m-%d')" -f;
 deploy:
   - provider: releases
     api_key:
