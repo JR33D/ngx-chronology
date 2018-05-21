@@ -37,6 +37,121 @@
                }
             }
          }
+      },
+      "ngx-chronology-demo": {
+         "root": "projects/ngx-chronology-demo/",
+         "sourceRoot": "projects/ngx-chronology-demo/src",
+         "projectType": "application",
+         "prefix": "ngx-demo",
+         "schematics": {
+            "@schematics/angular:component": {
+               "styleext": "scss"
+            }
+         },
+         "architect": {
+            "build": {
+               "builder": "@angular-devkit/build-angular:browser",
+               "options": {
+                  "outputPath": "docs",
+                  "index": "projects/ngx-chronology-demo/src/index.html",
+                  "main": "projects/ngx-chronology-demo/src/main.ts",
+                  "polyfills": "projects/ngx-chronology-demo/src/polyfills.ts",
+                  "tsConfig": "projects/ngx-chronology-demo/tsconfig.app.json",
+                  "assets": [
+                     "projects/ngx-chronology-demo/src/favicon.png",
+                     "projects/ngx-chronology-demo/src/assets"
+                  ],
+                  "styles": [
+                     "node_modules/bootstrap/dist/css/bootstrap.min.css",
+                     "projects/ngx-chronology-demo/src/styles.scss"
+                  ],
+                  "scripts": []
+               },
+               "configurations": {
+                  "production": {
+                     "fileReplacements": [
+                        {
+                           "replace":
+                              "projects/ngx-chronology-demo/src/environments/environment.ts",
+                           "with":
+                              "projects/ngx-chronology-demo/src/environments/environment.prod.ts"
+                        }
+                     ],
+                     "optimization": true,
+                     "outputHashing": "all",
+                     "sourceMap": false,
+                     "extractCss": true,
+                     "namedChunks": false,
+                     "aot": true,
+                     "extractLicenses": true,
+                     "vendorChunk": false,
+                     "buildOptimizer": true
+                  }
+               }
+            },
+            "serve": {
+               "builder": "@angular-devkit/build-angular:dev-server",
+               "options": {
+                  "browserTarget": "ngx-chronology-demo:build"
+               },
+               "configurations": {
+                  "production": {
+                     "browserTarget": "ngx-chronology-demo:build:production"
+                  }
+               }
+            },
+            "extract-i18n": {
+               "builder": "@angular-devkit/build-angular:extract-i18n",
+               "options": {
+                  "browserTarget": "ngx-chronology-demo:build"
+               }
+            },
+            "test": {
+               "builder": "@angular-devkit/build-angular:karma",
+               "options": {
+                  "main": "projects/ngx-chronology-demo/src/test.ts",
+                  "polyfills": "projects/ngx-chronology-demo/src/polyfills.ts",
+                  "tsConfig": "projects/ngx-chronology-demo/tsconfig.spec.json",
+                  "karmaConfig": "projects/ngx-chronology-demo/karma.conf.js",
+                  "styles": ["projects/ngx-chronology-demo/src/styles.scss"],
+                  "scripts": [],
+                  "assets": [
+                     "projects/ngx-chronology-demo/src/favicon.png",
+                     "projects/ngx-chronology-demo/src/assets"
+                  ]
+               }
+            },
+            "lint": {
+               "builder": "@angular-devkit/build-angular:tslint",
+               "options": {
+                  "tsConfig": [
+                     "projects/ngx-chronology-demo/tsconfig.app.json",
+                     "projects/ngx-chronology-demo/tsconfig.spec.json"
+                  ],
+                  "exclude": ["**/node_modules/**"]
+               }
+            }
+         }
+      },
+      "ngx-chronology-demo-e2e": {
+         "root": "projects/ngx-chronology-demo-e2e/",
+         "projectType": "application",
+         "architect": {
+            "e2e": {
+               "builder": "@angular-devkit/build-angular:protractor",
+               "options": {
+                  "protractorConfig": "projects/ngx-chronology-demo-e2e/protractor.conf.js",
+                  "devServerTarget": "ngx-chronology-demo:serve"
+               }
+            },
+            "lint": {
+               "builder": "@angular-devkit/build-angular:tslint",
+               "options": {
+                  "tsConfig": "projects/ngx-chronology-demo-e2e/tsconfig.e2e.json",
+                  "exclude": ["**/node_modules/**"]
+               }
+            }
+         }
       }
    },
    "defaultProject": "ngx-chronology"

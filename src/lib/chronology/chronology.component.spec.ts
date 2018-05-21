@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ChronologyComponent } from './chronology.component';
 import { Component, ViewChild } from '@angular/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 describe('ChronologyComponent', () => {
    let testHostComponent: TestChronologyHostComponent;
@@ -9,6 +10,7 @@ describe('ChronologyComponent', () => {
 
    beforeEach(async(() => {
       TestBed.configureTestingModule({
+         imports: [FontAwesomeModule],
          declarations: [ChronologyComponent, TestChronologyHostComponent],
       }).compileComponents();
    }));
@@ -25,7 +27,7 @@ describe('ChronologyComponent', () => {
    });
 
    @Component({
-      selector: `host-test-component`,
+      selector: `test-host-component`,
       template: `<ngx-chronology></ngx-chronology>`,
    })
    class TestChronologyHostComponent {

@@ -2,6 +2,12 @@
 /dist
 /tmp
 /out-tsc
+/coverage
+/docs
+
+# images
+/images
+/**/*.png
 
 # dependencies
 /node_modules

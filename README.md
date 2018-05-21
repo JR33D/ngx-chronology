@@ -1,13 +1,15 @@
-![Logo of the project](./images/logo.sample.png)
-
 # NGX-Chronology
+
+This is a chronology module and components for Angular projects.
+
+![Logo of the project](./images/green/Icon_256.png)
+
+## Badges
 
 [![Build](https://img.shields.io/travis/JR33D/ngx-chronology.svg)](https://travis-ci.org/JR33D/ngx-chronology)
 [![npm](https://img.shields.io/npm/v/ngx-chronology.svg)](https://www.npmjs.com/package/ngx-chronology)
 [![License](https://img.shields.io/badge/License-Unlicense-blue.svg)](https://github.com/your/your-project/blob/master/LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
-
-This is a chronology module and components for Angular projects.
 
 ## Installing / Getting started
 

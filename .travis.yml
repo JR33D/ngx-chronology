@@ -5,12 +5,16 @@ before_install:
  - export CHROME_BIN=chromium-browser
  - export DISPLAY=:99.0
  - sh -e /etc/init.d/xvfb start
- - npm i -g --silent npm@latest
 before_script:
  - npm i -g --silent @angular/cli
 script:
- - ng test
- - ng build --prod
+ - ng test ngx-chronology
+ - ng build ngx-chronology --prod
+ - ng test ngx-chronology-demo
+ - ng build ngx-chronology-demo --prod
+before_deploy:
+ - PKG_VERSION=`node -p "require('./package.json').version"`
+ - git tag "$(PKG_VERSION)-$(date +'%Y%m%d%H%M%S')"
 deploy:
   - provider: releases
     api_key:
@@ -20,16 +24,7 @@ deploy:
     on:
         tags: true
         branch: master
-  - provider: npm
-    email: jreed129@gmail.com
-    api_key:
-        secure: kVvRYcJ5byKTntSvZA7MYnCiNSlv3+l2WLduyXKUPrPKAdDkbHWAMyFM2QQb0uHrLF2sks0jrF2gg1LpdcUZXTsY4Y1T4i0CWGejqNMdgz7tC8GnGSqrQl1QzwLVqp7wPL/3mNnEVUfP43adoAxQSGbW2utFqvbxD85JdSnikV58x5C286Tv1bEkRmrnrFr5ZlgRwSZvOmq+EzLX6wTm10ELHK8iC6SlrLHxw4ZYWI5eezwf0qqyZB1bwZHD+ZcEOq0D48n/tXSIFxiRyjOkXgrpzsd462oH+MLRpyEA6aVIkiMohjWmR3AsRu8ti232wUCbmCpJi6csKHsdFCuxtIskng+3XID//SSdYa2QLWzj8brNMcmqzOkvR8EkTFKCKapP59RP1IPyNuuSP2MVAWxJS3LuGNWbJ7w0TH7FeR0Gye9mLhsrpuqfUJBLkNLNoZPHBtD9O3so/C2zYz+YAprPQdGf0nIIBtFyHtMiHyBzyIobDy7xx5zzqJQnsyE2lWb6DYqpN+f7YFTugNT+cWNi5Bw6BPZXJhVYniTN9lzKLUmoylNEVigpnHUV5zqaRHPZn11D1eleIQVrUuady218CwB8d7EZlUrGO+dMzwovz1RzyjIyNrv0fFNTDI4Nq52+Ud1KXjFuhF8VUh7W0nq7GBbwQl1iG/bmIhlAY8w=
-    on:
-        branch: master
-        tags: true
 notifications:
     email:
         on_success: never
         on_failure: change
-
-

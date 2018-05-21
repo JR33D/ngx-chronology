@@ -4,6 +4,7 @@
 /dist
 /tmp
 /out-tsc
+!/docs # We need docs compolation to build website
 
 # dependencies
 /node_modules

@@ -17,6 +17,7 @@ tsconfig.*.json
 .editorconfig
 
 #dir
+/projects
 /images
 /.github
 
