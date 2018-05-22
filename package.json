@@ -28,7 +28,13 @@
    "bugs": {
       "url": "https://github.com/jr33d/ngx-chronology/issues"
    },
-   "keywords": ["Angular", "Timeline", "Chronology", "Component", "ngx"],
+   "keywords": [
+      "Angular",
+      "Timeline",
+      "Chronology",
+      "Component",
+      "ngx"
+   ],
    "license": "The Unlicense",
    "dependencies": {
       "@angular/common": "^6.0.2",
