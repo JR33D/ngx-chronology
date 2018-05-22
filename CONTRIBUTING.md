@@ -33,7 +33,7 @@ This will run all test and make sure functionality is still in a working order. 
 
 ## Demo site and documentation
 
-All built documentation and the demo site are under the `./docs` folder. This is to take advantage of github pages for hosting. The source code to update these are under the `projects/ngx-chronology-demo` folder path. The documentation site is a full blown angular site to demonstrait the abilities of this library.
+All built documentation and the demo site are under the `./docs` folder. This is to take advantage of github pages for hosting. The source code to update these are under the `./ngx-chronology-demo` folder path. The documentation site is a full blown angular site to demonstrait the abilities of this library.
 
 ## Style guide
 
