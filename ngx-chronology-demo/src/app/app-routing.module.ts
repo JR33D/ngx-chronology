@@ -5,17 +5,12 @@ import { ConfigurationsComponent } from './configurations/configurations.compone
 
 const routes: Routes = [
    {
-      path: 'demo',
+      path: '',
       component: DemoComponent,
    },
    {
       path: 'config',
       component: ConfigurationsComponent,
-   },
-   {
-      path: '',
-      redirectTo: '/demo',
-      pathMatch: 'full',
    },
 ];
 

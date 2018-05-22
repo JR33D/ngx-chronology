@@ -18,7 +18,7 @@
     ],
     "paths": {
       "ngx-chronology": [
-        "dist/ngx-chronology"
+        "ngx-chronology/src/public_api"
       ]
     }
   }
