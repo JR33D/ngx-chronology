@@ -20,7 +20,7 @@ deploy:
     skip_cleanup: true
     on:
         branch: master
-        condition: git tag -l "${PKG_VERSION}-$(date +'%Y-%m-%d')" != "${PKG_VERSION}-$(date +'%Y-%m-%d')"
+        condition: (git tag -l "${PKG_VERSION}-$(date +'%Y-%m-%d')") != "${PKG_VERSION}-$(date +'%Y-%m-%d')"
 notifications:
     email:
         on_success: never
