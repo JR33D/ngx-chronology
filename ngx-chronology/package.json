@@ -1,8 +1,31 @@
 {
-  "name": "ngx-chronology",
-  "version": "1.0.0",
-  "peerDependencies": {
-    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
-  }
+   "name": "ngx-chronology",
+   "version": "1.0.0",
+   "author": {
+      "email": "JReed129@gmail.com",
+      "name": "Jeremy Reed",
+      "url": "http://jr33d.github.io"
+   },
+   "repository": {
+      "type": "GitHub",
+      "url": "https://github.com/jr33d/ngx-chronology"
+   },
+   "bugs": {
+      "url": "https://github.com/jr33d/ngx-chronology/issues"
+   },
+   "keywords": ["Angular", "Timeline", "Chronology", "Component", "ngx"],
+   "license": "The Unlicense",
+   "dependencies": {
+      "@angular/common": "^6.0.2",
+      "@angular/compiler": "^6.0.2",
+      "@angular/core": "^6.0.2",
+      "@angular/platform-browser": "^6.0.2",
+      "@angular/platform-browser-dynamic": "^6.0.2",
+      "@fortawesome/angular-fontawesome": "0.1.0-9",
+      "@fortawesome/fontawesome-svg-core": "^1.2.0-11",
+      "@fortawesome/free-brands-svg-icons": "^5.1.0-8",
+      "@fortawesome/free-regular-svg-icons": "^5.1.0-8",
+      "@fortawesome/free-solid-svg-icons": "^5.1.0-8",
+      "rxjs": "^6.0.0"
+   }
 }
