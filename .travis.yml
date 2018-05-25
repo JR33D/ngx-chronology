@@ -7,8 +7,6 @@ before_install:
  - sh -e /etc/init.d/xvfb start
  - export newPkgVersion=`node -p "require('./package.json').version"`
  - export oldPublishedVersion=`npm view ngx-chronology version`
- - echo "old" ${oldPublishedVersion}
- - echo "new" ${newPkgVersion}
 before_script:
  - npm i -g --silent @angular/cli
 script:
