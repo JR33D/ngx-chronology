@@ -18,7 +18,11 @@ import { environment } from '../environments/environment';
       DemoComponent,
       ConfigurationsComponent,
    ],
-   imports: [BrowserModule, AppRoutingModule, NgxChronologyModule],
+   imports: [
+       BrowserModule,
+       AppRoutingModule,
+       NgxChronologyModule
+    ],
    providers: [
     { provide: APP_BASE_HREF, useValue: environment.baseRef }
    ],

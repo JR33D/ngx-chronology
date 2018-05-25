@@ -1,3 +1,33 @@
-<h2 style="text-align: center;">
-  configurations coming soon!
-</h2>
+<main class="row">
+    <aside>
+        <span class="section-label">Find More</span>
+        <a [routerLink]="['/config']" fragment="Install" (click)="goToRoute('Install')">Installing/Getting Started</a>
+        <a [routerLink]="['/config']" fragment="Module" (click)="goToRoute('Module')">Add module to you NgModule</a>
+        <a [routerLink]="['/config']" fragment="Api" (click)="goToRoute('Api')">API Reference</a>
+        <a [routerLink]="['/config']" fragment="Icons" (click)="goToRoute('Icons')"></a>
+    </aside>
+    <div class="col">
+        <h2 id="Install">Installing / Getting started</h2>
+        <p>To get started using the libirary install from npm</p>
+        <pre><code>
+            {{ installCmd }}
+        </code></pre>
+        <p>This will give you access to the module and components available in the library.</p>
+
+        <h3 id="Module">Add module to you NgModule</h3>
+        <p>After installing the library to get access to the features you need to add it to your AppModule.</p>
+        <pre><code>
+            {{ moduleCode }}
+        </code></pre>
+        <p>The inside of you app.component.html you can use the component directve like so:</p>
+        <pre><code>
+            {{ tagUse }}
+        </code></pre>
+
+        <h2 id="Api">Api Reference</h2>
+        <p>The array of events passed to ‘ngx-chronology’ component should be a set of objects that match the interface:</p>
+        <pre><code>
+            {{ interfaceCode }}
+        </code></pre>
+    </div>
+</main>

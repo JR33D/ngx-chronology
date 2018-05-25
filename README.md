@@ -1,6 +1,6 @@
 # NGX-Chronology
 
-This is a chronology module and components for Angular projects.
+This is a chronology module and components for Angular projects. [Live Demo Here](https://jr33d.github.io/ngx-chronology/)
 
 ![Logo of the project](./images/green/Icon_256.png)
 

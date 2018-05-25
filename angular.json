@@ -24,7 +24,6 @@
                   "tsConfig": "ngx-chronology-demo/src/tsconfig.app.json",
                   "assets": ["ngx-chronology-demo/src/favicon.png", "ngx-chronology-demo/src/assets"],
                   "styles": [
-                     "node_modules/bootstrap/dist/css/bootstrap.min.css",
                      "ngx-chronology-demo/src/styles.scss"
                   ],
                   "scripts": []
@@ -74,7 +73,6 @@
                   "tsConfig": "ngx-chronology-demo/src/tsconfig.spec.json",
                   "karmaConfig": "ngx-chronology-demo/src/karma.conf.js",
                   "styles": [
-                     "node_modules/bootstrap/dist/css/bootstrap.min.css",
                      "ngx-chronology-demo/src/styles.scss"
                     ],
                   "scripts": [],
