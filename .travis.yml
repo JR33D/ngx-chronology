@@ -9,11 +9,12 @@ before_script:
  - npm i -g --silent @angular/cli
 script:
  - npm run build:prod
-before_deploy:
+after_script:
  - export newPkgVersion=`node -p "require('./package.json').version"`
  - export oldPublishedVersion = npm view ngx-chronology version
  - echo "old" ${oldPublishedVersion}
  - echo "new" ${newPkgVersion}
+before_deploy:
  - git tag "${newPkgVersion}-$(date +'%Y-%m-%d')";
 deploy:
   - provider: releases
