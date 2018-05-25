@@ -12,6 +12,8 @@ script:
 before_deploy:
  - export newPkgVersion=`node -p "require('./package.json').version"`
  - export oldPublishedVersion = npm view ngx-chronology version
+ - echo "old" ${oldPublishedVersion}
+ - echo "new" ${newPkgVersion}
  - git tag "${newPkgVersion}-$(date +'%Y-%m-%d')";
 deploy:
   - provider: releases
