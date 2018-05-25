@@ -1,6 +1,6 @@
 {
    "name": "ngx-chronology",
-   "version": "1.0.2",
+   "version": "1.0.3",
    "author": {
       "email": "JReed129@gmail.com",
       "name": "Jeremy Reed",
@@ -10,6 +10,7 @@
       "type": "GitHub",
       "url": "https://github.com/jr33d/ngx-chronology"
    },
+   "homepage": "https://github.com/jr33d/ngx-chronology#readme",
    "bugs": {
       "url": "https://github.com/jr33d/ngx-chronology/issues"
    },
