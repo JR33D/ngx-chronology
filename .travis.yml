@@ -21,7 +21,7 @@ deploy:
     skip_cleanup: true
     on:
         branch: master
-        condition: ("${oldPublishedVersion}-$(date +'%Y-%m-%d')") != ("${newPkgVersion}-$(date +'%Y-%m-%d')")
+        condition: "${oldPublishedVersion}-$(date +'%Y-%m-%d')" != "${newPkgVersion}-$(date +'%Y-%m-%d')"
 notifications:
     email:
         on_success: never
