@@ -1,11 +1,17 @@
 <div class="container">
     <h1>{{ title }}</h1>
     <ul class="chronology">
-        <li *ngFor="let event of events" class="chronology">
+        <li *ngFor="let event of events; index as i" class="chronology">
             <fa-icon [icon]="getIconInfo(event)" class="icon"></fa-icon>
             <details class="panel">
-                <summary>{{ event.title }}</summary>
-                <p>{{ event.content }}</p>
+                <summary>
+                    <div *ngIf="!titleTemplate">{{event.title}}</div>
+                    <ng-template *ngIf="titleTemplate" [ngTemplateOutlet]="titleTemplate.templateRef" [ngTemplateOutletContext]="{ $implicit: event, rowIndex: i }"></ng-template>
+                </summary>
+                <div>
+                    <p *ngIf="!contentTemplate">{{event.content}}</p>
+                    <ng-template *ngIf="contentTemplate" [ngTemplateOutlet]="contentTemplate.templateRef" [ngTemplateOutletContext]="{ $implicit: event, rowIndex: i }"></ng-template>
+                </div>
             </details>
         </li>
     </ul>

@@ -7,12 +7,24 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 
 import { ChronologyComponent } from './chronology/chronology.component';
+import {
+   ChronologyContentDirective,
+   ChronologyTitleDirective,
+} from './directives/layout.directive';
 
 library.add(far, fas, fab);
 
 @NgModule({
    imports: [BrowserModule, FontAwesomeModule],
-   declarations: [ChronologyComponent],
-   exports: [ChronologyComponent],
+   declarations: [
+      ChronologyComponent,
+      ChronologyContentDirective,
+      ChronologyTitleDirective
+   ],
+   exports: [
+      ChronologyComponent,
+      ChronologyTitleDirective,
+      ChronologyContentDirective
+   ],
 })
 export class NgxChronologyModule {}

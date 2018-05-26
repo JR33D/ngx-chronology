@@ -1,1 +1,16 @@
-<ngx-chronology [events]="events" title="Demo of Component"></ngx-chronology>
+<ngx-chronology [events]="events" title="Default Usage (string only content)"></ngx-chronology>
+
+<hr/>
+
+<ngx-chronology [events]="events" title="Using custom templates">
+    <ng-template let-event ngxChronologyTitle>
+        <marquee>{{ event.title }}</marquee>
+    </ng-template>
+    <ng-template let-event ngxChronologyContent>
+        <div>
+            Hello I have access to the event object inside of my templates.<br>
+            title: {{ event.title }}<br>
+            content: {{ event.content }}
+        </div>
+    </ng-template>
+</ngx-chronology>

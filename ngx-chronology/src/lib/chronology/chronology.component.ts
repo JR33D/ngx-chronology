@@ -1,5 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ContentChild } from '@angular/core';
 import { IChronologyEvent } from '../models/chronology-event.interface';
+import {
+   ChronologyTitleDirective,
+   ChronologyContentDirective,
+} from '../directives/layout.directive';
 
 @Component({
    selector: 'ngx-chronology',
@@ -9,6 +13,10 @@ import { IChronologyEvent } from '../models/chronology-event.interface';
 export class ChronologyComponent {
    @Input() public events: Array<IChronologyEvent>;
    @Input() public title: string;
+
+   @ContentChild(ChronologyTitleDirective) titleTemplate: ChronologyTitleDirective;
+   @ContentChild(ChronologyContentDirective) contentTemplate: ChronologyContentDirective;
+
    constructor() {}
 
    getIconInfo(event: IChronologyEvent) {

@@ -56,6 +56,8 @@ export interface IChronologyEvent {
 }
 ```
 
+For more information on using this component go to the [Documentation and Demo site](https://jr33d.github.io/ngx-chronology/)
+
 ## Want to Contribute?
 
 Go check out our [Contributing Document](/Contribute.md) for more information on getting setup.

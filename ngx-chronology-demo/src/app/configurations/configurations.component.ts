@@ -31,12 +31,26 @@ export class ConfigurationsComponent {
    tagUse = `
    <ngx-chronology [title]="chronologyTitle" [events]="ArrayOfEvents"></ngx-chronology>`;
 
+   templateCode = `
+    <ngx-chronology [events]="events" title="Using custom templates">
+        <ng-template let-event ngxChronologyTitle>
+            <marquee>{{ event.title }}</marquee>
+        </ng-template>
+        <ng-template let-event ngxChronologyContent>
+            <div>
+                Hello I have access to the event object inside of my templates.<br>
+                title: {{ event.title }}<br>
+                content: {{ event.content }}
+            </div>
+        </ng-template>
+    </ngx-chronology>`;
+
    goToRoute(id) {
       const elm = document.getElementById(id).scrollIntoView();
       const scrolledY = window.scrollY;
 
       if (scrolledY) {
-         window.scroll(0, scrolledY - 56);
+         window.scroll(0, scrolledY - 75);
       }
    }
 }

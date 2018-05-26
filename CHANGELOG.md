@@ -2,6 +2,13 @@ All notable changes to this project will be documented in this file.
 We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 For more information about the type of information that should be included here look at [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
+
+## [1.1.0] - 2018-05-26
+
+### Added
+
+* Directive classes, `NgxChronologyTitle` and `NgxChronologyContent` that can be used to define templates for title and content areas of chronology. Examples and configuration details on demo site.
+
 ## [1.0.4] - 2018-05-25
 
 ### Changed
@@ -24,7 +31,7 @@ For more information about the type of information that should be included here 
 
 ### Added
 
-*  Nothing.
+* Nothing.
 
 ### Changed
 
@@ -49,3 +56,4 @@ For more information about the type of information that should be included here 
 [Unreleased](https://github/jr33d/ngx-chronology)
 [1.0.0](https://github.com/JR33D/ngx-chronology/releases/tags/1.0.0-2018-05-21)
 [1.0.4](https://github.com/JR33D/ngx-chronology/releases/tags/1.0.4-2018-05-25)
+[1.1.0](https://github.com/JR33D/ngx-chronology/releases/tags/1.1.0-2018-05-26)
