@@ -53,7 +53,7 @@ For more information about the type of information that should be included here 
 
 *  Nothing.
 
-[Unreleased](https://github/jr33d/ngx-chronology)
+[Unreleased](https://github.com/jr33d/ngx-chronology)
 [1.0.0](https://github.com/JR33D/ngx-chronology/releases/tags/1.0.0-2018-05-21)
 [1.0.4](https://github.com/JR33D/ngx-chronology/releases/tags/1.0.4-2018-05-25)
 [1.1.0](https://github.com/JR33D/ngx-chronology/releases/tags/1.1.0-2018-05-26)
