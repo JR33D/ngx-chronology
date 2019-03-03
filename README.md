@@ -51,7 +51,6 @@ The array of events passed to 'ngx-chronology' component should be a set of obje
 export interface IChronologyEvent {
    title: string;
    icon?: string;
-   faLibrary: 'far' | 'fas' | 'fab';
    content: string;
 }
 ```

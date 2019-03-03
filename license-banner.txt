@@ -1,0 +1,4 @@
+/**
+ * @license ngx-chronology
+ * The Unlicense license
+ */

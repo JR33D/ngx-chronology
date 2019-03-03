@@ -3,6 +3,30 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 For more information about the type of information that should be included here look at [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 
+## [2.0.0] - 2019-03-03
+
+### Added
+
+* Nothing.
+
+### Changed
+
+*  Folder structure is completely different to follow angular 7 library structure.
+
+### Deprecated
+
+*  Nothing.
+
+### Removed
+
+*  Usage of `@fortAwesome` libraries for icons.
+
+### Fixed
+
+*  Package now works with Angular 7, closes [#2](https://github.com/jr33d/ngx-chronology/issues/2)
+
+
+
 ## [1.1.0] - 2018-05-26
 
 ### Added
@@ -57,3 +81,4 @@ For more information about the type of information that should be included here 
 [1.0.0](https://github.com/JR33D/ngx-chronology/releases/tags/1.0.0-2018-05-21)
 [1.0.4](https://github.com/JR33D/ngx-chronology/releases/tags/1.0.4-2018-05-25)
 [1.1.0](https://github.com/JR33D/ngx-chronology/releases/tags/1.1.0-2018-05-26)
+[2.0.0](https://github.com/JR33D/ngx-chronology/releases/tags/1.1.0-2019-03-03)
