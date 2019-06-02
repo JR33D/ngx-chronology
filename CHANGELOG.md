@@ -3,6 +3,12 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 For more information about the type of information that should be included here look at [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 
+## [1.1.1] - 2019-06-02
+
+### Fixed
+
+* Fixed issue with importing into Angular 7 projects.
+
 ## [1.1.0] - 2018-05-26
 
 ### Added
@@ -57,3 +63,4 @@ For more information about the type of information that should be included here 
 [1.0.0](https://github.com/JR33D/ngx-chronology/releases/tags/1.0.0-2018-05-21)
 [1.0.4](https://github.com/JR33D/ngx-chronology/releases/tags/1.0.4-2018-05-25)
 [1.1.0](https://github.com/JR33D/ngx-chronology/releases/tags/1.1.0-2018-05-26)
+[1.1.1](https://github.com/JR33D/ngx-chronology/releases/tags/1.1.1-2019-06-02)
