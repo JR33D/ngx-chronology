@@ -1,28 +1,29 @@
 language: node_js
 node_js:
- - "8"
+- '8'
 before_install:
- - export CHROME_BIN=chromium-browser
- - export DISPLAY=:99.0
- - sh -e /etc/init.d/xvfb start
- - export newPkgVersion=`node -p "require('./package.json').version"`
- - export oldPublishedVersion=`npm view ngx-chronology version`
+- export CHROME_BIN=chromium-browser
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- export newPkgVersion=`node -p "require('./package.json').version"`
+- export oldPublishedVersion=`npm view ngx-chronology version`
 before_script:
- - npm i -g --silent @angular/cli
+- npm i -g --silent @angular/cli
 script:
- - npm run build:prod
+- npm run build:prod
 before_deploy:
- - git tag "${newPkgVersion}-$(date +'%Y-%m-%d')";
+- git tag "${newPkgVersion}-$(date +'%Y-%m-%d')";
 deploy:
-  - provider: releases
-    api_key:
-        secure: DxLTZyU3gRFzb73Wn1Ae55FTAe8MM7xFomN/gaH5zqFoIqjWYXHhdCdH7NQcbBUxkTcCWcCpnJXzHgO8RrADWaFhPFNIDRnQH2MYXGSpYlE79TkoqJ5OgDbSWLyRmrXLzdOT4Ez9ovXWvBUhW0tvdvJFKN0AMwliMIeLnPd5D3+3b6xLGSsNr0ffl1SHPmlDymnR2tYTBqy8R6zLYe5embsesDxV2q9NdUt+5PtbgyobSOdUxIkLAVlFEGXhNu2n5Pvqfn8qyug81XOPPRrH1f+vR0oTFw9Kw/lfpRt4LjWbYQ3o5EC1NRwoSImp6bcBHEJz372FQvJXb5OskYIdyzZVgZqr1YXZXCsGjIS2FE3/1wbMBFI6Pu7v+bQ2fOQTMU+ann4M3G7rNd3tBiK+dBIo2MeiKd2R0HPaV+xNF8ohJ7qqQkU+foc1FQYjSmcHclLXw4EWdpG+LZwAvk5EukjeZMytqaIWdHAHRfLWtQtVZZTlVf20Je6HIXZfNRkvgAW9l+RjW9+iKDnwAsb5vwDwH650aczooiJ0u1PcuvEfkDAETd/gnwtOzJ9i6EgJdKt/lSydEE9r1N22UBzY8b2ZSX5p2dGtPQbb0HmpDA+corQ7IUbLfR5E7G3uduUZLmJkcLPJ2ixIVhofGsc+AaEL2Vo8Dzvl0ptnYcaRgPU=
-    file: "/dist/ngx-chronology"
+  provider: releases
+  api_key:
+    secure: MtH5s0qa2M0ow0VIJxnaTuR14DycNw/DDCyrjq90C9NCMrZ6GVVlPFIzUerORI7daeJ/Q4PQns3YoHamnQfy6Sx94Wa4Wk0HSfdZUtgfHr4AVsq8wdcXo0/4ywvfklFi2HYwR5kFFFt8r9PrPUQkP1vVApzWIwSxNquxZt5ExEBpVPjfKnGnCLWRYz/ZNxGq1StMTwQgFAuOk4vWImTpar3Dfiaj4WtCj0JFJmwAwS/z/5bfyHESKIm+spIQFK5eZn7Fkn+GIen5ccSg9/FqB3vqM+Rzf4nykSMvjb0GyxVv1+4Rt1HrPdGVvaZvp3VYpt6gczhHUiA4xA4hzQnJ2iw/3OsT5qzRGufw7Z2mRttG+ZvwF6c/buNpow3+MHSQP9ab4U7aj/sbphDEHspgB+7sJte2F+0Sgodmaie0O6Dw2rmeuSItHS29Xt+eUBmCN5+5w4K8y/2NnHUEpE1BlFnU/gPQGnHKZQpKw7I4gUUUBvnOLyY+wXYT8q/uZ3ntz2y1mXh65jKOg+hxkHwWF+dXD0JqS45jVk4xNgX8Aa9gURAgmUc3gn9kcOchOiBeJIB0zySR3bjwetksv5Mx9p+fNwKDOCkMSqQcMjl6xZaGZGzus3S2nd50n0DDWwRRFkweGjOi7i6/lHh3Ef+LNpWsQ/3vONkd901xu9bPFes=
+  file: "/dist/ngx-chronology"
     skip_cleanup: true
     on:
+        repo: JR33D/ngx-chronology
         branch: master
         condition: ("${oldPublishedVersion}-$(date +'%Y-%m-%d')" != "${newPkgVersion}-$(date +'%Y-%m-%d')")
 notifications:
-    email:
-        on_success: never
-        on_failure: change
+  email:
+    on_success: never
+    on_failure: change
