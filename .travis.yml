@@ -14,10 +14,10 @@ script:
 before_deploy:
 - git tag "${newPkgVersion}-$(date +'%Y-%m-%d')";
 deploy:
-  provider: releases
-  api_key:
-    secure: MtH5s0qa2M0ow0VIJxnaTuR14DycNw/DDCyrjq90C9NCMrZ6GVVlPFIzUerORI7daeJ/Q4PQns3YoHamnQfy6Sx94Wa4Wk0HSfdZUtgfHr4AVsq8wdcXo0/4ywvfklFi2HYwR5kFFFt8r9PrPUQkP1vVApzWIwSxNquxZt5ExEBpVPjfKnGnCLWRYz/ZNxGq1StMTwQgFAuOk4vWImTpar3Dfiaj4WtCj0JFJmwAwS/z/5bfyHESKIm+spIQFK5eZn7Fkn+GIen5ccSg9/FqB3vqM+Rzf4nykSMvjb0GyxVv1+4Rt1HrPdGVvaZvp3VYpt6gczhHUiA4xA4hzQnJ2iw/3OsT5qzRGufw7Z2mRttG+ZvwF6c/buNpow3+MHSQP9ab4U7aj/sbphDEHspgB+7sJte2F+0Sgodmaie0O6Dw2rmeuSItHS29Xt+eUBmCN5+5w4K8y/2NnHUEpE1BlFnU/gPQGnHKZQpKw7I4gUUUBvnOLyY+wXYT8q/uZ3ntz2y1mXh65jKOg+hxkHwWF+dXD0JqS45jVk4xNgX8Aa9gURAgmUc3gn9kcOchOiBeJIB0zySR3bjwetksv5Mx9p+fNwKDOCkMSqQcMjl6xZaGZGzus3S2nd50n0DDWwRRFkweGjOi7i6/lHh3Ef+LNpWsQ/3vONkd901xu9bPFes=
-  file: "/dist/ngx-chronology"
+  - provider: releases
+    api_key:
+      secure: MtH5s0qa2M0ow0VIJxnaTuR14DycNw/DDCyrjq90C9NCMrZ6GVVlPFIzUerORI7daeJ/Q4PQns3YoHamnQfy6Sx94Wa4Wk0HSfdZUtgfHr4AVsq8wdcXo0/4ywvfklFi2HYwR5kFFFt8r9PrPUQkP1vVApzWIwSxNquxZt5ExEBpVPjfKnGnCLWRYz/ZNxGq1StMTwQgFAuOk4vWImTpar3Dfiaj4WtCj0JFJmwAwS/z/5bfyHESKIm+spIQFK5eZn7Fkn+GIen5ccSg9/FqB3vqM+Rzf4nykSMvjb0GyxVv1+4Rt1HrPdGVvaZvp3VYpt6gczhHUiA4xA4hzQnJ2iw/3OsT5qzRGufw7Z2mRttG+ZvwF6c/buNpow3+MHSQP9ab4U7aj/sbphDEHspgB+7sJte2F+0Sgodmaie0O6Dw2rmeuSItHS29Xt+eUBmCN5+5w4K8y/2NnHUEpE1BlFnU/gPQGnHKZQpKw7I4gUUUBvnOLyY+wXYT8q/uZ3ntz2y1mXh65jKOg+hxkHwWF+dXD0JqS45jVk4xNgX8Aa9gURAgmUc3gn9kcOchOiBeJIB0zySR3bjwetksv5Mx9p+fNwKDOCkMSqQcMjl6xZaGZGzus3S2nd50n0DDWwRRFkweGjOi7i6/lHh3Ef+LNpWsQ/3vONkd901xu9bPFes=
+    file: "/dist/ngx-chronology"
     skip_cleanup: true
     on:
         repo: JR33D/ngx-chronology
